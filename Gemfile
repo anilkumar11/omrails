@@ -5,6 +5,7 @@ ruby "1.9.3"
 gem 'rails', '4.1.0'
 gem 'simple_form'
 gem 'protected_attributes'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 group :production do
 	gem 'pg'

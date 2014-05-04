@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, #:recoverable,
          :rememberable, :trackable, :validatable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name
-
-  has_many :pins
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :pins
+  has_many :pins, :dependent => :destroy
+  accepts_nested_attributes_for :pins, :allow_destroy => true
 end
